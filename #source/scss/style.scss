@@ -1,0 +1,139 @@
+//МИКСИНЫ
+@import "mixins.scss";
+
+//VARIABLES=====================================================================================================
+$minwidth: 320px;
+$mw: 1100;
+$md1: $mw+12;
+$md2: 992.98;
+$md3: 767.98;
+$md4: 479.98;
+//VARIABLES=====================================================================================================
+
+//CONNECTED FONTS===============================================================================================
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@font-face {
+	font-family: 'Myriad Pro';
+	src: url('../fonts/SQDRSS+Myriad Pro-Regular.eot');
+	src: local('☺'), url('../fonts/SQDRSS+Myriad Pro-Regular.woff') format('woff'), url('../fonts/SQDRSS+Myriad Pro-Regular.ttf') format('truetype'), url('../fonts/SQDRSS+Myriad Pro-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+//CONNECTED FONTS===============================================================================================
+
+//DEFAULT FONTS=================================================================================================
+$fontfamily: "Lato";
+//DEFAULT FONTS=================================================================================================
+
+//RESET=========================STYLES==========================================================================
+@import "null.scss";
+
+body{
+
+}
+//RESET=========================STYLES==========================================================================
+
+//ОБОЛОЧКА======================================================================================================
+.wrapper{
+	overflow: hidden;
+	width: 100%;
+	min-height: 100%;
+}
+//ОБОЛОЧКА======================================================================================================
+
+//ОСНОВНАЯ=======================СЕТКА==========================================================================
+.container{
+	max-width: 1130px;
+	padding: 0 15px;
+	margin: 0 auto;
+	max-width:$mw+px;margin: 0 auto;width: 100%;
+	@media(max-width:$md1+px){max-width: 970px;}
+	@media(max-width:$md2+px){max-width: 750px;}
+	@media(max-width:$md3+px){max-width: none;padding:0 10px;}
+}
+//ОСНОВНАЯ=======================СЕТКА==========================================================================
+
+//ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ=================================================================
+@import "ibg.scss";
+@import "baguetteBox.min.scss";
+@import "main-screen.scss";
+@import "menu.scss";
+@import "header-block.scss";
+@import "about.scss";
+@import "portfolio.scss";
+@import "partners.scss";
+@import "contact.scss";
+@import "footer.scss";
+//ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ=================================================================
+
+//ОСНОВНОЙ=======================БЛОК===========================================================================
+.page {
+	// position: absolute;
+	// width: 100%;
+	// height: 100%;
+	// top: 0;
+	// left: 0;
+	@include flexbox();
+	flex-direction: column;
+}
+.content {
+	background-color: #fff;
+	position: relative;
+	z-index: 50;
+}
+
+//ОСНОВНОЙ=======================БЛОК===========================================================================
+.btn {
+	display: inline-block;
+	padding: 0 42px;
+	height: 47px;
+	line-height: 44px;
+	background-color: transparent;
+	text-transform: uppercase;
+	font-size: 16px;
+	letter-spacing: 0.67px;
+	position: relative;
+	&_w {
+		color: #fff;
+		border: 1px solid #fff;
+		background-color: transparent;
+		&:after{
+			background-color: #fff;
+		}
+	}
+	&_b {
+		color: #000;
+		border: 1px solid #000;
+		background-color: transparent;
+		&:after{
+			background-color: #000;
+		}
+	}
+	span{
+		position: relative;
+		z-index: 1;
+		@include anim(0.3s,0s);
+	}
+	&:after{
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		@include scale(0);
+		@include anim(0.3s,0s);
+	}
+	&:hover{
+		&.btn_w{
+			color: #000;
+		}
+		&.btn_b{
+			color: #fff;
+		}
+		&:after{
+			@include scale(1);
+		}
+	}
+}
+//=========================================================================================

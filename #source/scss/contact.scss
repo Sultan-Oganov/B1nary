@@ -1,0 +1,138 @@
+.contacts {
+	padding: 180px 0 80px 0;
+	@media (max-width:$md2+px){
+		padding: 80px 0 50px 0;
+	}
+	@media (max-width:$md3+px){
+		padding: 30px 0 30px 0;
+	}
+	&__header-block {
+		margin: 0 0 120px 0;
+		@media (max-width:$md2+px){
+			margin: 0 0 50px 0;
+		}
+		@media (max-width:$md3+px){
+			margin: 0 0 30px 0;
+		}
+	}
+	&__body {
+		@include flexbox();
+		margin: 0 -25px;
+		@media (max-width:$md3+px) {
+			display: block;
+		}
+	}
+	&__column {
+		flex: 0 1 50%;
+		padding: 0 25px;
+	}
+	&__form {
+		text-align: right;
+		@media (max-width:$md3+px){
+			text-align: left;
+			margin: 0 0 30px 0;
+		}
+	}
+	&__content {
+		max-width: 260px;
+		@media (max-width:$md3+px){
+			max-width: none;
+		}
+	}
+	&__text {
+		font-size: 14px;
+		font-weight: 300;
+		line-height: 26px;
+		margin: 0 0 35px 0;
+	}
+	&__name {
+		font-size: 14px;
+		font-weight: 700;
+		margin: 0 0 20px 0;
+}
+	&__social {
+		margin: 0 0 15px 0;
+	}
+	&__email {
+		font-size: 14px;
+		a{
+			font-weight: 700;
+			color: #000;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.form-contacts {
+	&__body{
+		max-width: 385px;
+		width: 100%;
+		display: inline-block;
+		@media (max-width:$md3+px){
+			max-width: none;
+			display: block;
+		}
+	}
+	&__row {
+		@include flexbox();
+		margin: 0 -30px 70px -30px;
+		@media (max-width:$md3+px){
+			margin: 0 -30px 30px -30px;
+		}
+		@media (max-width:$md4+px){
+			display: block;
+		}
+	}
+	&__column {
+		flex: 0 1 50%;
+		padding: 0 30px;
+		@media (max-width:$md4+px){
+			&:first-child{
+				margin: 0 0 30px 0;
+			}
+		}
+	}
+	&__input {}
+	&__label {
+		font-size: 14px;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin: 0 0 10px 0;
+		text-align: left;
+		letter-spacing: 0.84px;
+	}
+	&__btn {
+		margin: 40px 0 0 0;
+		@media (max-width:$md3+px){
+			display: block;
+			width: 100%;
+		}
+	}
+}
+.input {
+	border-top: 1px solid #000;
+	height: 50px;
+	border-radius: 0 !important;
+	width: 100%;
+	display: block;
+	font-size: 15px;
+	padding: 0 20px;
+	background-color: #f8f7f7;
+	&:focus{
+		border-top: 1px solid #0000FF;
+	}
+}
+.social {
+	@include flexbox();
+	&__item {
+		margin: 0 10px 0 0;
+	}
+}
+input[type=text],input[type=email],input[type=tel],textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+textarea.input{
+	resize: none;
+	height: 117px;
+	padding: 10px 20px;
+}

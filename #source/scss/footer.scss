@@ -1,0 +1,34 @@
+.footer {
+	background-color: #3c3c3c;
+	padding: 48px 0;
+	z-index: 1;
+	&__body {
+		text-align: center;
+	}
+	&__logo {
+		display: inline-block;
+		margin: 0 0 41px 0;
+	}
+	&__menu {
+		text-align: center;
+	}
+	&__list {
+		@include flexbox();
+		align-items:center;
+		justify-content: center;
+		margin: 0 0 34px 0;
+		li{margin: 0 15px}
+	}
+	&__link {
+		color: #a4a4a4;
+		font-size: 14px;
+		&:hover{
+			color: #fff;
+		}
+	}
+	&__text {
+		color: #6c6c6c;
+		font-family: "Myriad Pro";
+		font-size: 14px;
+	}
+}

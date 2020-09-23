@@ -1,0 +1,90 @@
+.mainscreen {
+	flex: 1 0 100%;
+	position: relative;
+	@include flexbox();
+	justify-content: center;
+	text-align: center;
+	padding: 50px 0;
+	&__bg {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+	&__content {
+		position: relative;
+		z-index: 1;
+		flex: 1 1 auto;
+		.container{
+			height: 100%;
+			@include flexbox;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+	&__logo{}
+	&__text {
+		position: relative;
+		color: #ffffff;
+		padding: 0 0 45px 0;
+		margin: 30px 0;
+		&:after{
+			content: '';
+			width: 105px;
+			height: 2px;
+			background-color: #fff;
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			margin: 0 0 0 -52.5px;
+		}
+	}
+	&__title {
+		font-size: 34px;
+		line-height: 40px;
+		text-transform: uppercase;
+		font-weight: 900;
+		letter-spacing: 5.43px;
+		margin: 0 0 10px 0;
+		@media screen and (max-width: $md3+px), screen and (max-height: 600px){
+			font-size: 25px;
+			line-height: 30px;
+		}
+	}
+	&__subtitle {
+		font-size: 26px;
+		letter-spacing: 4.15px;
+	}
+	&__footer {
+		@include flexboxinline();
+		flex-direction: column;
+		position: relative;
+	}
+	&__btn{
+		margin: 0 0 60px 0;
+		@media screen and (max-width: $md3+px), screen and (max-height: 600px){
+			margin: 0 0 30px 0;
+		}
+	}
+	&__arrow {
+		position: absolute;
+		left: 50%;
+		animation: arrow 2s infinite ease;
+		margin: 0 -8.5px;
+	}
+}
+
+@keyframes arrow{
+
+0%{
+	top: 75%;
+}
+50%{
+	top: 90%;
+}
+100%{
+	top: 75%;
+}
+}

@@ -1,0 +1,31 @@
+.header-block {
+	text-align: center;
+	&__title {
+		color: #000000;
+		font-size: 34px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 8.95px;
+		position: relative;
+		padding: 0 0 35px 0;
+		&:after{
+			content: '';
+			width: 81px;
+			height: 1px;
+			background-color: #000000;
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			margin: 0 0 0 -40.5px;
+		}
+	}
+	&__subtitle {
+		color: #868585;
+		font-size: 14px;
+		font-weight: 300;
+		line-height: 25.89px;
+		padding: 35px 0 0 0;
+		max-width: 700px;
+		margin: 0 auto;
+	}
+}

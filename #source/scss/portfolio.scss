@@ -1,0 +1,76 @@
+.portfolio {
+	background-color: #f3f3f3;
+	padding: 105px 0 60px 0;
+	@media (max-width: $md2+px){
+		padding: 50px 0 40px 0;
+	}
+	&__header-block {
+		margin: 0 0 50px 0;
+		@media (max-width: $md2+px){
+			margin: 0 0 30px 0;
+		}
+		@media (max-width: $md3+px){
+			margin: 0 0 20px 0;
+		}
+	}
+	&__filter {
+		margin: 0 0 135px 0;
+		@media (max-width: $md2+px){
+			margin: 0 0 50px 0;
+		}
+		@media (max-width: $md3+px){
+			margin: 0 0 20px 0;
+		}
+	}
+	&__items{
+		@include flexbox();
+		margin: 0 -15px;
+		flex-wrap: wrap;
+	}
+	&__column {
+		max-width: 50%;
+		flex: 0 1 50%;
+		padding: 0 15px;
+		margin: 0 0 30px 0;
+		@media (max-width: $md3+px){
+			flex: 1 1 100%;
+			margin: 0 0 20px 0;
+		}
+	}
+	&__item {
+		img{max-width: 100%;}
+	}
+	&__footer {
+		padding: 35px 0 0 0;
+		text-align: center;
+		@media (max-width: $md3+px){
+			padding: 15px 0 0 0;
+		}
+	}
+	&__btn {}
+}
+	
+.filter {
+	&__list {
+		@include flexbox();
+		justify-content: center;
+		align-items: center;
+	}
+	&__item {
+		color: #3c3c3c;
+		font-size: 15px;
+		text-transform: uppercase;
+		font-weight: 700;
+		margin: 0 25px;
+		cursor: pointer;
+		@media (max-width: $md3+px){
+			margin: 0 15px;
+		}
+		&:active{
+			color: #c4bb9e;
+		}
+		&.active{
+			color: #c4bb9e;
+		}
+	}
+}
